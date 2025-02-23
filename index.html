@@ -16,7 +16,7 @@
     <header class="header">
 
         <h2 class="header__title">header</h2>
-        <button class="header__button">Botón</button>
+        <button  class="header__button" id="btn-modo-oscuro">oscuro | claro</button>
 
     </header>
 
@@ -28,7 +28,7 @@
             <img class="contenido__hero-image" src="https://placehold.co/1000x200?text=hero" alt="Hero">
         </section>
         <section class="contenido__container">
-            <h5 class="contenido__hazme-click ">hazme click!</h5>
+            <div class="contenido__hazme-click">hazme click!</div>
         </section>
         <section class="contenido__galeria">
             <img src="https://placehold.co/600x400?text=imagen+1" alt="Imagen 1" class="contenido__item-galeria">
@@ -99,8 +99,6 @@
 
     <footer class="footer">
         <h2>footer</h2>
-        <button id="btn-modo-oscuro">oscuro | claro</button>
-
     </footer>
 
 
@@ -129,11 +127,6 @@
             
         }
 
-        
-        
-        
-
-    
         acordeon.forEach(item => {
             item.addEventListener('click', () => {
                 acordeon.forEach(item => item.classList.remove("open"));
@@ -148,8 +141,6 @@
         miBoton.addEventListener("click", cambiarAModoOscuro);
         contenido.addEventListener("click", activarBotonContenido,);
 
-        
-    
 
         //----------------------------------------------------------------
         // Paso 3: Ejecutar nuestro código
