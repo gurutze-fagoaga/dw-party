@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Diseño Web - Web Party de DW </title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+
+<body class="body">
+
+<!--HEADER-->
+    <header class="header">
+
+        <h2 class="header__title">header</h2>
+        <button class="header__button">Botón</button>
+
+    </header>
+
+<!--CONTENIDO-->
+
+    <main class="contenido">
+        <section class="contenido__hero">
+            <h2 class="contenido__hero-title">Web Party DW!</h2>
+            <img class="contenido__hero-image" src="https://placehold.co/1000x200?text=hero" alt="Hero">
+        </section>
+        <section class="contenido__container">
+            <h5 class="contenido__hazme-click ">hazme click!</h5>
+        </section>
+        <section class="contenido__galeria">
+            <img src="https://placehold.co/600x400?text=imagen+1" alt="Imagen 1" class="contenido__item-galeria">
+            <img src="https://placehold.co/600x400?text=imagen+2" alt="Imagen 2"
+                class="contenido__item-galeria contenido__item--doble">
+            <img src="https://placehold.co/600x400?text=imagen+3" alt="Imagen 3" class="contenido__item-galeria">
+            <img src="https://placehold.co/600x400?text=imagen+4" alt="Imagen 4" class="contenido__item-galeria">
+            <img src="https://placehold.co/600x400?text=imagen+5" alt="Imagen 5" class="contenido__item-galeria">
+            <img src="https://placehold.co/600x400?text=imagen+6" alt="Imagen 6" class="contenido__item-galeria">
+            <img src="https://placehold.co/600x400?text=imagen+7" alt="Imagen 7"
+                class="contenido__item-galeria contenido__item--doble">
+            <img src="https://placehold.co/600x400?text=imagen+8" alt="Imagen 8" class="contenido__item-galeria">
+        </section>
+
+    </main>
+
+<!--ASIDE-->
+
+    <aside class="sidebar">
+        <h2>sidebar</h2>
+        <div class="acordeon">
+            <div class="acordeon__item open">
+                <h3>Pregunta 1</h3>
+                <div class="acordeon__content">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad dignissimos, nam, eaque dolore
+                        totam perferendis sit suscipit labore officiis facere temporibus. Laboriosam unde quaerat
+                        voluptatum eligendi corrupti ipsa, labore ab!
+                        Recusandae asperiores dolorem, voluptatibus repellat autem facere enim, atque minus quas,
+                        pariatur dolorum velit magni totam minima ex! Optio soluta sint sequi cumque. Beatae
+                        quibusdam tempore neque ad exercitationem debitis?
+                        Harum obcaecati ipsa modi saepe doloremque! Fugiat inventore quisquam dolorem quas illum
+                        magnam sint facere consectetur earum aperiam! Dignissimos incidunt voluptate, quasi
+                        provident recusandae doloremque quis quam voluptatum vitae? Repellat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="acordeon__item">
+                <h3>Pregunta 2</h3>
+                <div class="acordeon__content">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                        assumenda harum dolorum odio fuga numquam minus tempora? Blanditiis
+                        quam exercitationem inventore enim autem laborum temporibus
+                        assumenda, consequuntur, sequi aut rerum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="acordeon__item">
+                <h3>Pregunta 3</h3>
+                <div class="acordeon__content">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, corrupti deserunt
+                        adipisci enim ab eveniet pariatur dolorum aliquam cumque eos, itaque praesentium ea?
+                        Quisquam delectus iste, accusamus voluptas tempora error?
+                        Quos aspernatur, voluptatem nulla sunt incidunt suscipit perspiciatis blanditiis alias
+                        molestiae quis quisquam eos atque officia exercitationem ex veniam placeat explicabo dolorem
+                        eaque adipisci corrupti mollitia deleniti! Quae, optio neque?
+                    </p>
+                </div>
+            </div>
+
+    </aside>
+
+<!--FOOTER-->
+
+    <footer class="footer">
+        <h2>footer</h2>
+        <button id="btn-modo-oscuro">oscuro | claro</button>
+
+    </footer>
+
+
+    <script>
+        //----------------------------------------------------------------
+        // Paso 1: Obtener elementos de nuestro DOM (documento HTML)
+        //----------------------------------------------------------------
+        const miBoton = document.querySelector("#btn-modo-oscuro");
+        const body = document.querySelector("body");
+        const acordeon = document.querySelectorAll(".acordeon__item");
+        const contenido = document.querySelector(".contenido__container");
+        const texto = document.querySelector(".contenido__hazme-click");
+        
+        //----------------------------------------------------------------
+        // Paso 2: Crear nuestras funciones
+        //----------------------------------------------------------------
+
+        function cambiarAModoOscuro() {
+            // body.classList.add("dark-mode");
+            body.classList.toggle("dark-mode");
+        }
+
+        function activarBotonContenido(){
+            contenido.classList.add("isActivated");
+            texto.innerHTML = "Me has activado!";
+            
+        }
+
+        
+        
+        
+
+    
+        acordeon.forEach(item => {
+            item.addEventListener('click', () => {
+                acordeon.forEach(item => item.classList.remove("open"));
+                item.classList.toggle('open');
+
+            }
+
+            )
+        })
+
+        // agregar escucha de click a mi boton y llamar a la dunción cada vez que lo aprietan.
+        miBoton.addEventListener("click", cambiarAModoOscuro);
+        contenido.addEventListener("click", activarBotonContenido,);
+
+        
+    
+
+        //----------------------------------------------------------------
+        // Paso 3: Ejecutar nuestro código
+        //----------------------------------------------------------------
+        // cambiarAModoOscuro();
+        console.log("Mi página está funcionando")
+
+        // Podemos agregar HTML dentro de nuestro contenedor
+        // sidebar.innerHTML = "hola, estoy dentro de sidebar";
+
+
+
+    </script>
+
+</body>
+
+</html>
